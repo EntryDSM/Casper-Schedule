@@ -1,18 +1,22 @@
-name: Build Check
+name: Spring Build Check
 
 on:
   push:
     branches: [ '*' ]
   pull_request:
-    branches: [ main, develop ]
+    branches: [ main, develop, release/*, hotfix/* ]
+  workflow_dispatch:
 
 jobs:
   build:
     name: Build Check
     runs-on: ubuntu-latest
-
+    timeout-minutes: 15
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout Code
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
     
     - name: Set up JDK
       uses: actions/setup-java@v3
@@ -21,13 +25,34 @@ jobs:
         distribution: 'temurin'
         cache: gradle
     
+    - name: Cache Gradle packages
+      uses: actions/cache@v3
+      with:
+        path: |
+          ~/.gradle/caches
+          ~/.gradle/wrapper
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+        restore-keys: |
+          ${{ runner.os }}-gradle-
+    
     - name: Grant execute permission for gradlew
       run: chmod +x ./gradlew
       
     - name: Build with Gradle
-      run: ./gradlew clean build
+      run: ./gradlew clean build --no-daemon
       
-    # 빌드 실패 시 브랜치 보호를 위한 스크립트
+    - name: Upload build reports
+      if: always()
+      uses: actions/upload-artifact@v3
+      with:
+        name: build-reports
+        path: |
+          **/build/reports/
+          **/build/test-results/
+        retention-days: 7
+        
     - name: Fail if build failed
       if: failure()
-      run: exit 1
+      run: |
+        echo "빌드에 실패했습니다. 로컬에서 오류를 수정한 후 다시 시도하세요."
+        exit 1
