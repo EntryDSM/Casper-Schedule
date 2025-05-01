@@ -1,0 +1,11 @@
+repos:
+  - repo: local
+    hooks:
+      - id: gradle-build-check
+        name: Gradle Build Check
+        entry: ./gradlew
+        args: [clean, build, -x, test]
+        language: system
+        pass_filenames: false
+        files: '(\.gradle|gradle\.properties|settings\.gradle(\.kts)?|build\.gradle(\.kts)?|src/.*\.(java|kt|xml|properties))$'
+        verbose: true
