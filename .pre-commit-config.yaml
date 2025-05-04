@@ -1,8 +1,9 @@
+# .pre-commit-config.yaml
 repos:
-  -   repo: local
-      hooks:
-        -   id: build-check
-            name: 프로젝트 빌드 검증
-            entry: bash -c 'echo "Java 빌드 검증 시작" && ./gradlew build'
-            language: system
-            pass_filenames: false
+  - repo: local
+    hooks:
+      - id: build-check
+        name: 빌드 검증
+        entry: ./build-check.sh
+        language: script
+        pass_filenames: false
