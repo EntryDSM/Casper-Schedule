@@ -2,6 +2,10 @@ package hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`
 
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request.UpdateSchedulesRequest
 
+/**
+ * 일정을 일괄 업데이트하기 위한 유스케이스 인터페이스입니다.
+ * 이 인터페이스는 도메인 서비스에서 여러 일정을 한 번에 업데이트할 때 사용됩니다.
+ */
 interface UpdateSchedulesUseCase {
     /**
      * 일정을 일괄 업데이트합니다.

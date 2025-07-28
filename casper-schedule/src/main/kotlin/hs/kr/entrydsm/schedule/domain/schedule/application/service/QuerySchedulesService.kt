@@ -11,6 +11,13 @@ import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import org.springframework.stereotype.Service
 import java.time.LocalDateTime
 
+/**
+ * 모든 스케줄을 조회하는 서비스 구현체입니다.
+ * 저장소로부터 스케줄 정보를 조회하고, 현재 상태 정보와 함께 반환합니다.
+ *
+ * @property findSchedulePort 스케줄 조회를 위한 포트
+ * @property scheduleFacade 스케줄 관련 비즈니스 로직을 처리하는 퍼사드
+ */
 @Service
 class QuerySchedulesService(
     private val findSchedulePort: FindSchedulePort,

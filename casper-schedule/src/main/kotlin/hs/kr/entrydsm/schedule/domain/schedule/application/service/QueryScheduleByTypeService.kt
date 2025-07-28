@@ -6,6 +6,11 @@ import hs.kr.entrydsm.schedule.domain.schedule.facade.ScheduleFacade
 import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import org.springframework.stereotype.Service
 
+/**
+ * 특정 타입의 스케줄을 조회하는 서비스 구현체입니다.
+ *
+ * @property scheduleFacade 스케줄 관련 비즈니스 로직을 처리하는 퍼사드
+ */
 @Service
 class QueryScheduleByTypeService(
     private val scheduleFacade: ScheduleFacade

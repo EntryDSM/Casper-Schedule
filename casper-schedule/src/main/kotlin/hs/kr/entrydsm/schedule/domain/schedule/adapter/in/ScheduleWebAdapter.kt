@@ -14,6 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 
+/**
+ * 스케줄 관련 HTTP 요청을 처리하는 REST 컨트롤러입니다.
+ * 클라이언트의 요청을 적절한 유스케이스에 위임하고 결과를 반환합니다.
+ *
+ * @property queryScheduleByTypeUseCase 타입별 스케줄 조회 유스케이스
+ * @property querySchedulesUseCase 모든 스케줄 조회 유스케이스
+ * @property updateSchedulesUseCase 스케줄 업데이트 유스케이스
+ */
 @RestController
 @RequestMapping("/schedule")
 class ScheduleWebAdapter(
