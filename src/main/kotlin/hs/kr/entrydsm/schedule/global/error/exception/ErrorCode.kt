@@ -14,5 +14,7 @@ enum class ErrorCode(
     // Schedule
     DATE_SEQUENCE_NOT_VALID(400, "Schedule sequence is not valid"),
     INVALID_SCHEDULE(400, "Schedule list is Empty."),
-    SCHEDULE_NOT_FOUND(404, "Schedule Not Found")
+    SCHEDULE_NOT_FOUND(404, "Schedule Not Found"),
+
+    TYPE_MAPPING_ERROR(400, "Schedule Type Mapping Error")
 }
