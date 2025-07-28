@@ -64,7 +64,8 @@ dependencies {
 	implementation(Dependencies.GRPC_KOTLIN_STUB)
 	implementation(Dependencies.PROTOBUF_KOTLIN)
 	testImplementation(Dependencies.GRPC_TESTING)
-	implementation("net.devh:grpc-server-spring-boot-starter:2.14.0.RELEASE")
+	implementation(Dependencies.GRPC_SERVER_SPRING)
+	implementation(Dependencies.GOGGLE_PROTOBUF)
 }
 
 
