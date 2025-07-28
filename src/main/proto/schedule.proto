@@ -1,0 +1,29 @@
+syntax = "proto3";
+package casper.schedule;
+
+option java_package = "com.casper.schedule";
+option java_outer_classname = "ScheduleProto";
+
+import "google/protobuf/empty.proto";
+
+service ScheduleService {
+  rpc getSchedules(google.protobuf.Empty) returns (SchedulesResponse);
+}
+
+message SchedulesResponse {
+  repeated ScheduleResponse schedules = 1;
+  string currentStatus = 2;
+}
+
+message ScheduleResponse {
+  Type type = 1;
+  string date = 2;
+}
+
+enum Type {
+    START_DATE = 0;
+    FIRST_ANNOUNCEMENT = 1;
+    INTERVIEW = 2;
+    SECOND_ANNOUNCEMENT = 3;
+    END_DATE = 4;
+}
