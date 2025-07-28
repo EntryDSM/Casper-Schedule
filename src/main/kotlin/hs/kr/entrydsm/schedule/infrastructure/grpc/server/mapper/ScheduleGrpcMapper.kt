@@ -1,10 +1,10 @@
 package hs.kr.entrydsm.schedule.infrastructure.grpc.server.mapper
 
 import com.casper.schedule.ScheduleProto
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.ScheduleDto
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
 import hs.kr.entrydsm.schedule.infrastructure.grpc.server.exception.TypeMappingException
-import hs.kr.entrydsm.schedule.model.schedule.type.Type
+import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import org.springframework.stereotype.Component
 import java.time.format.DateTimeFormatter
 

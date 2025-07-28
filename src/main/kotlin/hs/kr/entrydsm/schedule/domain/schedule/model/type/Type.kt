@@ -1,4 +1,4 @@
-package hs.kr.entrydsm.schedule.model.schedule.type
+package hs.kr.entrydsm.schedule.domain.schedule.model.type
 
 /**
  * 스케줄의 유형을 나타내는 열거형 클래스입니다.

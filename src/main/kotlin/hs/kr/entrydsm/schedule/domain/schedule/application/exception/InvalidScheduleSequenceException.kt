@@ -1,4 +1,4 @@
-package hs.kr.entrydsm.schedule.application.schedule.exception
+package hs.kr.entrydsm.schedule.domain.schedule.application.exception
 
 import hs.kr.entrydsm.schedule.global.error.exception.CasperException
 import hs.kr.entrydsm.schedule.global.error.exception.ErrorCode

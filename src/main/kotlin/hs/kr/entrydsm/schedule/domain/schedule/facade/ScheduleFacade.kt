@@ -1,10 +1,10 @@
-package hs.kr.entrydsm.schedule.facade
+package hs.kr.entrydsm.schedule.domain.schedule.facade
 
-import hs.kr.entrydsm.schedule.application.schedule.exception.ScheduleNotFoundException
-import hs.kr.entrydsm.schedule.application.schedule.port.`in`.ScheduleFacadeUseCase
-import hs.kr.entrydsm.schedule.application.schedule.port.out.FindSchedulePort
-import hs.kr.entrydsm.schedule.model.schedule.Schedule
-import hs.kr.entrydsm.schedule.model.schedule.type.Type
+import hs.kr.entrydsm.schedule.domain.schedule.application.exception.ScheduleNotFoundException
+import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.ScheduleFacadeUseCase
+import hs.kr.entrydsm.schedule.domain.schedule.application.port.out.FindSchedulePort
+import hs.kr.entrydsm.schedule.domain.schedule.model.Schedule
+import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import org.springframework.stereotype.Component
 
 /**
@@ -18,7 +18,6 @@ import org.springframework.stereotype.Component
 class ScheduleFacade(
     private val findSchedulePort: FindSchedulePort
 ) : ScheduleFacadeUseCase {
-    override fun getScheduleByType(type: Type): Schedule =
-        findSchedulePort.findByType(type)
-            ?: throw ScheduleNotFoundException
+    override fun getScheduleByType(type: Type): Schedule = findSchedulePort.findByType(type)
+        ?: throw ScheduleNotFoundException
 }

@@ -3,7 +3,7 @@ package hs.kr.entrydsm.schedule.infrastructure.grpc.server
 import com.casper.schedule.ScheduleProto
 import com.casper.schedule.ScheduleServiceGrpcKt
 import com.google.protobuf.Empty
-import hs.kr.entrydsm.schedule.application.schedule.service.ScheduleService
+import hs.kr.entrydsm.schedule.domain.schedule.application.service.ScheduleService
 import hs.kr.entrydsm.schedule.infrastructure.grpc.server.mapper.ScheduleGrpcMapper
 import net.devh.boot.grpc.server.service.GrpcService
 import org.springframework.transaction.annotation.Transactional

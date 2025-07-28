@@ -1,7 +1,7 @@
-package hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto
 
 import com.fasterxml.jackson.annotation.JsonFormat
-import hs.kr.entrydsm.schedule.model.schedule.type.Type
+import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import jakarta.validation.constraints.NotNull
 import java.time.LocalDateTime
 

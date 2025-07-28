@@ -1,7 +1,7 @@
-package hs.kr.entrydsm.schedule.application.schedule.port.`in`
+package hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`
 
-import hs.kr.entrydsm.schedule.model.schedule.Schedule
-import hs.kr.entrydsm.schedule.model.schedule.type.Type
+import hs.kr.entrydsm.schedule.domain.schedule.model.Schedule
+import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 
 /**
  * 외부 시스템에서 사용할 일정 관련 유스케이스 인터페이스입니다.

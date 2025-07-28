@@ -1,9 +1,9 @@
-package hs.kr.entrydsm.schedule.adapter.`in`.schedule
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule
 
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.ScheduleDto
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.request.UpdateSchedulesRequest
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
-import hs.kr.entrydsm.schedule.application.schedule.service.ScheduleService
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.request.UpdateSchedulesRequest
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
+import hs.kr.entrydsm.schedule.domain.schedule.application.service.ScheduleService
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping

@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.model.schedule
+package hs.kr.entrydsm.schedule.domain.schedule.model
 
-import hs.kr.entrydsm.schedule.model.schedule.type.Type
+import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import java.time.LocalDateTime
 
 /**

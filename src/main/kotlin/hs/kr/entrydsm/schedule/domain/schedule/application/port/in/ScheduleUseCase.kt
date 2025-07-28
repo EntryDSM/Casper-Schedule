@@ -1,8 +1,8 @@
-package hs.kr.entrydsm.schedule.application.schedule.port.`in`
+package hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`
 
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.ScheduleDto
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.request.UpdateSchedulesRequest
-import hs.kr.entrydsm.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.request.UpdateSchedulesRequest
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
 
 /**
  * 일정 관련 유스케이스 인터페이스입니다.

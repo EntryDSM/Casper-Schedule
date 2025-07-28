@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.adapter.out.entity.schedule
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity.schedule
 
-import hs.kr.entrydsm.schedule.model.schedule.type.Type
+import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import jakarta.persistence.Column
 import jakarta.persistence.Entity
 import jakarta.persistence.EnumType

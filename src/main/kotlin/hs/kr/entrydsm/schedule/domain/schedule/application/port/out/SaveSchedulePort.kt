@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.application.schedule.port.out
+package hs.kr.entrydsm.schedule.domain.schedule.application.port.out
 
-import hs.kr.entrydsm.schedule.model.schedule.Schedule
+import hs.kr.entrydsm.schedule.domain.schedule.model.Schedule
 
 /**
  * 일정을 저장하는 포트 인터페이스입니다.
