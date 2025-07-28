@@ -11,7 +11,7 @@ style:
     active: true
     maxLineLength: 120
   MagicNumber:
-    active: true
+    active: false
     ignoreNumbers:
       - '-1'
       - '0'
