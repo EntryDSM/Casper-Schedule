@@ -76,3 +76,7 @@ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
 
     jvmTarget = ("17") // Detekt가 사용하는 JVM 타겟을 Java 17로 지정
 }
+
+tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+    mainClass.set("hs.kr.entrydsm.schedule.CasperScheduleApplication")
+}
