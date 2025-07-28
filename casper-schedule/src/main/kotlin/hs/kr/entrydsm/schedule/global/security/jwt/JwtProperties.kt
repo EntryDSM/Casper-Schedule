@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
  * @property header JWT 토큰이 전달될 HTTP 헤더 이름
  * @property prefix JWT 토큰의 접두사 (예: 'Bearer ')
  */
-@ConfigurationProperties("auth.jwt")
+@ConfigurationProperties("jwt")
 class JwtProperties(
     val secretKey: String,
     val header: String,

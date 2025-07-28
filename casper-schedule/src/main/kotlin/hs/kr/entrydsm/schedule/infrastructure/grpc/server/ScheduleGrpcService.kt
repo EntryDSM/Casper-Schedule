@@ -3,7 +3,7 @@ package hs.kr.entrydsm.schedule.infrastructure.grpc.server
 import com.casper.schedule.ScheduleProto
 import com.casper.schedule.ScheduleServiceGrpcKt
 import com.google.protobuf.Empty
-import hs.kr.entrydsm.schedule.domain.schedule.application.service.ScheduleService
+import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.QuerySchedulesUseCase
 import hs.kr.entrydsm.schedule.infrastructure.grpc.server.mapper.ScheduleGrpcMapper
 import net.devh.boot.grpc.server.service.GrpcService
 import org.springframework.transaction.annotation.Transactional
@@ -18,7 +18,7 @@ import org.springframework.transaction.annotation.Transactional
 @GrpcService
 class ScheduleGrpcService(
     private val scheduleGrpcMapper: ScheduleGrpcMapper,
-    private val scheduleService: ScheduleService
+    private val querySchedulesUseCase: QuerySchedulesUseCase
 ) : ScheduleServiceGrpcKt.ScheduleServiceCoroutineImplBase() {
     /**
      * 모든 스케줄을 조회하는 메서드입니다.
@@ -28,7 +28,7 @@ class ScheduleGrpcService(
      */
     @Transactional(readOnly = true)
     override suspend fun getSchedules(request: Empty): ScheduleProto.SchedulesResponse {
-        val schedules = scheduleService.querySchedules()
+        val schedules = querySchedulesUseCase.execute()
         return scheduleGrpcMapper.toSchedulesProto(schedules)
     }
 }
