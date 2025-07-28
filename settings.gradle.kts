@@ -13,3 +13,5 @@ dependencyResolutionManagement {
         mavenCentral()
     }
 }
+
+include("casper-schedule")
