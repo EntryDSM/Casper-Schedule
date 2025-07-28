@@ -1,6 +1,6 @@
 package hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`
 
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.response.SchedulesResponse
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response.SchedulesResponse
 
 interface QuerySchedulesUseCase {
     /**

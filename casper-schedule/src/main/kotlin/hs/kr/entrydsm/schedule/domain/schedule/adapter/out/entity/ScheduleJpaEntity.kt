@@ -1,4 +1,4 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity.schedule
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity
 
 import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import jakarta.persistence.Column

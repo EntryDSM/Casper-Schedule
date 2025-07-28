@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.request
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request
 
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.ScheduleDto
 import jakarta.validation.constraints.NotNull
 
 /**

@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.response
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response
 
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.ScheduleDto
 
 /**
  * 스케줄 목록과 현재 상태를 포함하는 응답 데이터 클래스입니다.

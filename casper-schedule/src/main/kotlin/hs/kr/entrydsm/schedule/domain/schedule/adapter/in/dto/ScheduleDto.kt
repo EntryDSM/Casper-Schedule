@@ -1,4 +1,4 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.schedule.dto
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto
 
 import com.fasterxml.jackson.annotation.JsonFormat
 import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type

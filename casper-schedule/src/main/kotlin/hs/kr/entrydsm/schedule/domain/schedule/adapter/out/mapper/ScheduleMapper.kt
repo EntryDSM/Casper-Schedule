@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.mapper.schedule
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.mapper
 
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity.schedule.ScheduleJpaEntity
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity.ScheduleJpaEntity
 import hs.kr.entrydsm.schedule.domain.schedule.model.Schedule
 import org.mapstruct.Mapper
 

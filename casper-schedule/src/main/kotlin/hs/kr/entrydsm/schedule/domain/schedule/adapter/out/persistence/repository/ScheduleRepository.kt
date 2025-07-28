@@ -1,6 +1,6 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.persistence.schedule.repository
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.persistence.repository
 
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity.schedule.ScheduleJpaEntity
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.entity.ScheduleJpaEntity
 import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import org.springframework.data.jpa.repository.JpaRepository
 

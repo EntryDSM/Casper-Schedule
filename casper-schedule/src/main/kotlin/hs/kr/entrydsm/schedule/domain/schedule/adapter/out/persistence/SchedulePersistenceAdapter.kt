@@ -1,9 +1,9 @@
-package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.persistence.schedule
+package hs.kr.entrydsm.schedule.domain.schedule.adapter.out.persistence
 
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.mapper.schedule.ScheduleMapper
-import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.persistence.schedule.repository.ScheduleRepository
-import hs.kr.entrydsm.schedule.domain.schedule.application.port.out.SaveSchedulePort
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.mapper.ScheduleMapper
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.out.persistence.repository.ScheduleRepository
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.out.FindSchedulePort
+import hs.kr.entrydsm.schedule.domain.schedule.application.port.out.SaveSchedulePort
 import hs.kr.entrydsm.schedule.domain.schedule.model.Schedule
 import hs.kr.entrydsm.schedule.domain.schedule.model.type.Type
 import org.springframework.stereotype.Component
