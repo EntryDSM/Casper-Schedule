@@ -20,6 +20,15 @@ import java.nio.charset.StandardCharsets
 class GlobalExceptionFilter(
     private val objectMapper: ObjectMapper
 ) : OncePerRequestFilter() {
+    /**
+     * 모든 요청에 대해 필터를 적용하여 예외 처리를 수행합니다.
+     *
+     * @param request HTTP 요청 객체
+     * @param response HTTP 응답 객체
+     * @param filterChain 다음 필터 또는 서블릿으로 요청을 전달하기 위한 체인
+     * @throws Exception 처리 중 발생할 수 있는 예외
+     */
+    @Throws(Exception::class)
     override fun doFilterInternal(
         request: HttpServletRequest,
         response: HttpServletResponse,
@@ -35,6 +44,13 @@ class GlobalExceptionFilter(
         }
     }
 
+    /**
+     * 에러 코드에 해당하는 HTTP 응답을 작성합니다.
+     *
+     * @param response HTTP 응답 객체
+     * @param errorCode 에러 코드 (상태 코드와 메시지 포함)
+     * @throws IOException 응답 작성 중 발생할 수 있는 I/O 예외
+     */
     @Throws(IOException::class)
     private fun writerErrorCode(
         response: HttpServletResponse,

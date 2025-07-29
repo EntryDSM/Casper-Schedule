@@ -20,14 +20,31 @@ class SchedulePersistenceAdapter(
     private val scheduleRepository: ScheduleRepository,
     private val scheduleMapper: ScheduleMapper
 ) : FindSchedulePort, SaveSchedulePort {
+    /**
+     * 주어진 타입에 해당하는 스케줄을 조회합니다.
+     *
+     * @param type 조회할 스케줄의 타입
+     * @return 해당 타입의 스케줄이 존재하면 Schedule 객체를, 없으면 null을 반환
+     */
     override fun findByType(type: Type): Schedule? {
         return scheduleRepository.findByType(type)?.let { scheduleMapper.toModel(it) }
     }
 
+    /**
+     * 모든 스케줄을 조회합니다.
+     *
+     * @return 저장된 모든 스케줄의 리스트를 반환합니다. 스케줄이 없을 경우 빈 리스트를 반환합니다.
+     */
     override fun findAllBy(): List<Schedule> {
         return scheduleRepository.findAllBy().map { scheduleMapper.toModel(it) }
     }
 
+    /**
+     * 스케줄을 저장하거나 업데이트합니다.
+     *
+     * @param schedule 저장할 스케줄 도메인 모델
+     * @return 저장된 스케줄 도메인 모델
+     */
     override fun saveSchedule(schedule: Schedule): Schedule {
         return scheduleMapper.toModel(scheduleRepository.save(scheduleMapper.toEntity(schedule)))
     }

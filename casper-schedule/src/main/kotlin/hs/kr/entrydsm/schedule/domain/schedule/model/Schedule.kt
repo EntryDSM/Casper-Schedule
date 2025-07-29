@@ -16,5 +16,13 @@ data class Schedule(
     val type: Type,
     val date: LocalDateTime
 ) {
+    /**
+     * 스케줄의 날짜를 업데이트한 새로운 [Schedule] 인스턴스를 반환합니다.
+     * 원본 객체는 불변(immutable)이므로, 이 메서드는 기존 객체를 수정하지 않고
+     * 새로운 객체를 생성하여 반환합니다.
+     *
+     * @param newDate 새로 설정할 날짜 및 시간
+     * @return 날짜가 업데이트된 새로운 Schedule 인스턴스
+     */
     fun updateDate(newDate: LocalDateTime) = copy(date = newDate)
 }

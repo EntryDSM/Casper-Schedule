@@ -1,5 +1,12 @@
 package hs.kr.entrydsm.schedule.global.error.exception
 
+/**
+ * 애플리케이션에서 사용되는 에러 코드를 정의한 enum 클래스입니다.
+ * 각 에러 코드는 HTTP 상태 코드와 에러 메시지를 포함합니다.
+ *
+ * @property status HTTP 상태 코드
+ * @property message 클라이언트에 표시될 에러 메시지
+ */
 enum class ErrorCode(
     val status: Int,
     val message: String

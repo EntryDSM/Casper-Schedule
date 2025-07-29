@@ -19,6 +19,17 @@ import org.springframework.stereotype.Component
 class FilterConfig(
     private val objectMapper: ObjectMapper
 ) : SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>() {
+    /**
+     * Spring Security 필터 체인을 구성하는 메서드입니다.
+     * 다음 필터들을 순서대로 등록합니다:
+     * 1. GlobalExceptionFilter - 전역 예외 처리를 위한 필터
+     * 2. JwtFilter - JWT 인증을 처리하는 필터
+     * 3. UsernamePasswordAuthenticationFilter - 기본 인증 필터
+     *
+     * @param builder HttpSecurity 빌더 인스턴스
+     * @throws Exception 필터 체인 구성 중 오류가 발생한 경우
+     */
+    @Throws(Exception::class)
     override fun configure(builder: HttpSecurity) {
         builder.addFilterBefore(
             JwtFilter(),
