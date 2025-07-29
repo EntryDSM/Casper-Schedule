@@ -65,7 +65,7 @@ dependencies {
 	implementation(Dependencies.PROTOBUF_KOTLIN)
 	testImplementation(Dependencies.GRPC_TESTING)
 	implementation(Dependencies.GRPC_SERVER_SPRING)
-	implementation(Dependencies.GOGGLE_PROTOBUF)
+	implementation(Dependencies.GOOGLE_PROTOBUF)
 }
 
 
