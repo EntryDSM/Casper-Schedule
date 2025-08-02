@@ -1,6 +1,5 @@
 package hs.kr.entrydsm.schedule.global.security.jwt
 
-import io.lettuce.core.tracing.Tracing.clearContext
 import jakarta.servlet.FilterChain
 import jakarta.servlet.http.HttpServletRequest
 import jakarta.servlet.http.HttpServletResponse
@@ -47,7 +46,6 @@ class JwtFilter : OncePerRequestFilter() {
         val authentication: Authentication =
             UsernamePasswordAuthenticationToken(userDetails, "", userDetails.authorities)
 
-        clearContext()
         SecurityContextHolder.getContext().authentication = authentication
         filterChain.doFilter(request, response)
     }
