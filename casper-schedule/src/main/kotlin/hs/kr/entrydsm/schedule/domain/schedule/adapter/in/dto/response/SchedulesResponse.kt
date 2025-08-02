@@ -9,6 +9,6 @@ import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.ScheduleDto
  * @property currentStatus 현재 스케줄 상태를 나타내는 문자열
  */
 data class SchedulesResponse(
-    val schedules: List<ScheduleDto?>,
+    val schedules: List<ScheduleDto>,
     val currentStatus: String
 )
