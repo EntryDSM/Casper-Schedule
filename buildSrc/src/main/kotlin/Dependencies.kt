@@ -39,5 +39,5 @@ object Dependencies {
     const val PROTOBUF_KOTLIN = "com.google.protobuf:protobuf-kotlin:${DependencyVersion.PROTOBUF}"
     const val GRPC_TESTING = "io.grpc:grpc-testing:${DependencyVersion.GRPC}"
     const val GRPC_SERVER_SPRING = "net.devh:grpc-server-spring-boot-starter:${DependencyVersion.GRPC_SERVER_SPRING}"
-    const val GOOGLE_PROTOBUF = "com.google.protobuf:protobuf-java:${DependencyVersion.GOGGLE_PROTOBUF}"
+    const val GOOGLE_PROTOBUF = "com.google.protobuf:protobuf-java:${DependencyVersion.GOOGLE_PROTOBUF}"
 }
