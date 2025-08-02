@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package schedule.proto;
+package casper.schedule;
 
 option java_package = "hs.kr.entrydsm.casper.schedule.proto";
 option java_outer_classname = "ScheduleServiceProto";
