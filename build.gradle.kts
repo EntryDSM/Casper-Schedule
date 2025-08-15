@@ -7,7 +7,7 @@ plugins {
     kotlin("plugin.spring") version "1.9.23"
     id("org.springframework.boot") version "3.4.4"
     id("io.spring.dependency-management") version "1.1.7"
-    id("org.jlleitschuh.gradle.ktlint").version("12.1.1")
+    id("org.jlleitschuh.gradle.ktlint").version("11.5.1")
     id("io.gitlab.arturbosch.detekt") version "1.23.6"
     id("casper.documentation-convention")
 }
@@ -75,4 +75,8 @@ tasks.withType<io.gitlab.arturbosch.detekt.Detekt>().configureEach {
     }
 
     jvmTarget = ("17") // Detekt가 사용하는 JVM 타겟을 Java 17로 지정
+}
+
+tasks.withType<org.springframework.boot.gradle.tasks.bundling.BootJar> {
+    mainClass.set("hs.kr.entrydsm.schedule.CasperScheduleApplication")
 }
