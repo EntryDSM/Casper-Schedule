@@ -15,6 +15,12 @@ repositories {
 	mavenCentral()
 }
 
+dependencyManagement {
+	imports {
+		mavenBom("org.springframework.cloud:spring-cloud-dependencies:${DependencyVersion.SPRING_CLOUD_CONFIG_VERSION}")
+	}
+}
+
 dependencies {
 	// 스프링 부트 기본 기능
 	implementation(Dependencies.SPRING_BOOT_STARTER)
@@ -66,6 +72,9 @@ dependencies {
 	testImplementation(Dependencies.GRPC_TESTING)
 	implementation(Dependencies.GRPC_SERVER_SPRING)
 	implementation(Dependencies.GOOGLE_PROTOBUF)
+
+	// Cloud Config
+	implementation(Dependencies.SPRING_CLOUD_CONFIG)
 }
 
 
