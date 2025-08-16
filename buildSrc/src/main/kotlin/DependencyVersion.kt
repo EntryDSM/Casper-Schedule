@@ -14,4 +14,6 @@ object DependencyVersion {
     const val PROTOBUF = "3.25.3"
     const val GRPC_SERVER_SPRING = "2.15.0.RELEASE"
     const val GOOGLE_PROTOBUF = "3.25.3"
+
+    const val SPRING_CLOUD_CONFIG_VERSION = "2023.0.3"
 }

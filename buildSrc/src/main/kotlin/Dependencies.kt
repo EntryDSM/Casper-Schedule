@@ -40,4 +40,7 @@ object Dependencies {
     const val GRPC_TESTING = "io.grpc:grpc-testing:${DependencyVersion.GRPC}"
     const val GRPC_SERVER_SPRING = "net.devh:grpc-server-spring-boot-starter:${DependencyVersion.GRPC_SERVER_SPRING}"
     const val GOOGLE_PROTOBUF = "com.google.protobuf:protobuf-java:${DependencyVersion.GOOGLE_PROTOBUF}"
+
+    // Spring Cloud Config
+    const val SPRING_CLOUD_CONFIG = "org.springframework.cloud:spring-cloud-starter-config"
 }
