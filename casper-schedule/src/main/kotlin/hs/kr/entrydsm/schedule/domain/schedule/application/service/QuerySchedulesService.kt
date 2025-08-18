@@ -2,7 +2,7 @@ package hs.kr.entrydsm.schedule.domain.schedule.application.service
 
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.ScheduleDto
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response.SchedulesResponse
-import hs.kr.entrydsm.schedule.domain.schedule.application.exception.InvalidScheduleSequenceException
+import hs.kr.entrydsm.schedule.domain.schedule.exception.InvalidScheduleSequenceException
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.QuerySchedulesUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.out.FindSchedulePort
 import hs.kr.entrydsm.schedule.domain.schedule.facade.ScheduleFacade
