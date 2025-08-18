@@ -75,6 +75,9 @@ dependencies {
 
 	// Cloud Config
 	implementation(Dependencies.SPRING_CLOUD_CONFIG)
+
+	// Swagger
+	implementation(Dependencies.SWAGGER)
 }
 
 

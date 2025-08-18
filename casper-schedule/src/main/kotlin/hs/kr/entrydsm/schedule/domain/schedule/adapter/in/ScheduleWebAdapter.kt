@@ -6,6 +6,7 @@ import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response.Schedul
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.QueryScheduleByTypeUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.QuerySchedulesUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.UpdateSchedulesUseCase
+import hs.kr.entrydsm.schedule.global.document.schedule.ScheduleApiDocument
 import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
@@ -28,9 +29,9 @@ class ScheduleWebAdapter(
     private val queryScheduleByTypeUseCase: QueryScheduleByTypeUseCase,
     private val querySchedulesUseCase: QuerySchedulesUseCase,
     private val updateSchedulesUseCase: UpdateSchedulesUseCase
-) {
+) : ScheduleApiDocument {
     @GetMapping(params = ["type"])
-    fun queryScheduleByType(
+    override fun queryScheduleByType(
         @RequestParam type: String
     ): ScheduleDto = queryScheduleByTypeUseCase.execute(type)
 
@@ -40,7 +41,7 @@ class ScheduleWebAdapter(
      * @return 모든 일정 정보를 담은 응답 객체
      */
     @GetMapping
-    fun querySchedules(): SchedulesResponse = querySchedulesUseCase.execute()
+    override fun querySchedules(): SchedulesResponse = querySchedulesUseCase.execute()
 
     /**
      * 일정을 일괄 업데이트합니다.
@@ -49,7 +50,7 @@ class ScheduleWebAdapter(
      * @return 업데이트된 일정 정보를 담은 응답 객체
      */
     @PatchMapping
-    fun updateSchedules(
+    override fun updateSchedules(
         @RequestBody @Valid
         request: UpdateSchedulesRequest
     ) = updateSchedulesUseCase.execute(request)
