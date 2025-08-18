@@ -1,6 +1,6 @@
 package hs.kr.entrydsm.schedule.domain.schedule.facade
 
-import hs.kr.entrydsm.schedule.domain.schedule.application.exception.ScheduleNotFoundException
+import hs.kr.entrydsm.schedule.domain.schedule.exception.ScheduleNotFoundException
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.ScheduleFacadeUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.out.FindSchedulePort
 import hs.kr.entrydsm.schedule.domain.schedule.model.Schedule
