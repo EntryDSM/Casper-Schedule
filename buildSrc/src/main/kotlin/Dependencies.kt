@@ -43,4 +43,7 @@ object Dependencies {
 
     // Spring Cloud Config
     const val SPRING_CLOUD_CONFIG = "org.springframework.cloud:spring-cloud-starter-config"
+
+    // swagger
+    const val SWAGGER = "org.springdoc:springdoc-openapi-starter-webmvc-ui:${DependencyVersion.SWAGGER_VERSION}"
 }
