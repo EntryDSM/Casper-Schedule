@@ -1,11 +1,11 @@
 spring:
   application:
-    name: Casper-Schedule
+    name: ${SPRING_APPLICATION_NAME}
   config:
-    import: "configserver:${CONFIG_SERVER_URL}"
+    import: "configserver:${SPRING_CLOUD_CONFIG_URL}"
   cloud:
     config:
-      label: main
+      label: ${SPRING_CLOUD_CONFIG_LABEL}
       fail-fast: true
       retry:
         initial-interval: 1000
@@ -13,10 +13,8 @@ spring:
         max-interval: 2000
         multiplier: 1.1
   profiles:
-    active: ${SPRING_PROFILES_ACTIVE}
+    active: ${SPRING_CLOUD_CONFIG_PROFILE}
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: health,info,refresh
+encrypt:
+  key: ${ENCRYPT_KEY}
+  salt: ${ENCRYPT_SALT}
