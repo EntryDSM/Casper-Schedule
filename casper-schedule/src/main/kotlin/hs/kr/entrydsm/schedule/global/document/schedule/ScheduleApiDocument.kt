@@ -12,6 +12,9 @@ import jakarta.validation.Valid
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestParam
 
+/**
+ * 전형 일정 관련 API 문서를 정의하는 인터페이스입니다.
+ */
 @Tag(name = "Schedule", description = "전형 일정 API")
 interface ScheduleApiDocument {
 
@@ -31,6 +34,9 @@ interface ScheduleApiDocument {
             content = arrayOf(Content())
         )
     )
+    /**
+     * 일정 종류별 전형 일정을 조회합니다.
+     */
     fun queryScheduleByType(
         @RequestParam type: String
     ): ScheduleDto
@@ -46,6 +52,9 @@ interface ScheduleApiDocument {
             content = arrayOf(Content())
         )
     )
+    /**
+     * 모든 전형 일정을 조회합니다.
+     */
     fun querySchedules(): SchedulesResponse
 
     @Operation(
@@ -64,6 +73,9 @@ interface ScheduleApiDocument {
             content = arrayOf(Content())
         )
     )
+    /**
+     * 전형 일정을 수정합니다.
+     */
     fun updateSchedules(
         @RequestBody @Valid
         request: UpdateSchedulesRequest
