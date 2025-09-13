@@ -12,13 +12,14 @@ RUN mkdir -p /cache/.gradle
 
 COPY ./build.gradle* ./settings.gradle* ./gradle.properties* ./gradlew* ./
 COPY ./gradle gradle
+COPY ./buildSrc buildSrc
 
 RUN chmod +x gradlew && ./gradlew --version
 RUN chmod +x gradlew && ./gradlew dependencies || true
 
 COPY ./ .
 
-RUN chmod +x gradlew && ./gradlew bootJar -x test && \
+RUN chmod +x gradlew && ./gradlew :casper-schedule:bootJar -x test && \
     rm -rf .gradle /app/.gradle /root/.kotlin /tmp/* /var/tmp/* /tmp/kotlin-daemon*.log* 2>/dev/null || true
 
 FROM eclipse-temurin:17-jre-alpine
@@ -29,9 +30,7 @@ WORKDIR /app
 
 ENV TZ=Asia/Seoul JAVA_OPTS="-XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:+UseG1GC -XX:G1HeapRegionSize=16m -XX:+UseStringDeduplication -XX:-UsePerfData"
 
-COPY --from=build --chown=appuser:appgroup /app/build/libs/Casper-Schedule-0.0.1-SNAPSHOT.jar /tmp/libs/
-
-RUN find /tmp/libs -name "*.jar" ! -name "*-plain.jar" -exec cp {} /app/app.jar \; && rm -rf /tmp/libs && chown appuser:appgroup /app/app.jar
+COPY --from=build --chown=appuser:appgroup /app/casper-schedule/build/libs/casper-schedule.jar /app/app.jar
 
 USER appuser
 
