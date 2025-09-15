@@ -16,5 +16,5 @@ object DependencyVersion {
     const val GOOGLE_PROTOBUF = "3.25.3"
 
     const val SPRING_CLOUD_CONFIG_VERSION = "2024.0.2"
-    const val SWAGGER_VERSION = "2.5.0"
+    const val SWAGGER_VERSION = "2.7.0"
 }
