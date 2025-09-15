@@ -45,6 +45,10 @@ class SecurityConfig(
                 auth
                     .requestMatchers(CorsUtils::isCorsRequest).permitAll()
                     .requestMatchers(HttpMethod.PATCH, "/schedule/**").hasRole(UserRole.ADMIN.name)
+                    .requestMatchers("/swagger-ui/**").permitAll()
+                    .requestMatchers("/v3/api-docs/**").permitAll()
+                    .requestMatchers("/swagger-resources/**").permitAll()
+                    .requestMatchers("/webjars/**").permitAll()
                     .anyRequest().permitAll()
             }
             .with(FilterConfig(objectMapper)) { }
