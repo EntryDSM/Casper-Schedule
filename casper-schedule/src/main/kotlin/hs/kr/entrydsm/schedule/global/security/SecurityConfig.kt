@@ -36,14 +36,23 @@ class SecurityConfig(
     protected fun filterChain(http: HttpSecurity): SecurityFilterChain {
         http
             .csrf { it.disable() }
-//            .cors { }
+            .cors { cors ->
+                cors.configurationSource { request ->
+                    val configuration = org.springframework.web.cors.CorsConfiguration()
+                    configuration.allowedOriginPatterns = listOf("*")
+                    configuration.allowedMethods = listOf("*")
+                    configuration.allowedHeaders = listOf("*")
+                    configuration.allowCredentials = true
+                    configuration
+                }
+            }
             .formLogin { it.disable() }
             .sessionManagement {
                 it.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
             }
             .authorizeHttpRequests { auth ->
                 auth
-//                    .requestMatchers(CorsUtils::isCorsRequest).permitAll()
+                    .requestMatchers(CorsUtils::isCorsRequest).permitAll()
                     .requestMatchers(HttpMethod.PATCH, "/schedule/**").hasRole(UserRole.ADMIN.name)
                     .requestMatchers("/swagger-ui/**").permitAll()
                     .requestMatchers("/v3/api-docs/**").permitAll()
