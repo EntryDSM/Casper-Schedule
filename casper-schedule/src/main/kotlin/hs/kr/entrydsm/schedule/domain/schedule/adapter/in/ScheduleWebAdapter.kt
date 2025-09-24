@@ -40,7 +40,7 @@ class ScheduleWebAdapter(
      *
      * @return 모든 일정 정보를 담은 응답 객체
      */
-    @GetMapping
+    @GetMapping("/all")
     override fun querySchedules(): SchedulesResponse = querySchedulesUseCase.execute()
 
     /**
