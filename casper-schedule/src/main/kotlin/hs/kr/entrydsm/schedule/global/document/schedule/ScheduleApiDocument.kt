@@ -1,6 +1,7 @@
 package hs.kr.entrydsm.schedule.global.document.schedule
 
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request.CreateScheduleRequest
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request.UpdateSchedulesRequest
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response.SchedulesResponse
 import io.swagger.v3.oas.annotations.Operation
@@ -80,5 +81,29 @@ interface ScheduleApiDocument {
     fun updateSchedules(
         @RequestBody @Valid
         request: UpdateSchedulesRequest
+    )
+
+    @Operation(
+        summary = "전형 일정 생성",
+        description = "전형 일정을 생성합니다."
+    )
+    @ApiResponses(
+        ApiResponse(
+            responseCode = "200",
+            description = "전형 일정 생성 성공",
+            content = arrayOf(Content())
+        ),
+        ApiResponse(
+            responseCode = "400",
+            description = "일정이 비어있거나 일정 순서가 올바르지 않습니다. - InvalidScheduleRequestException or InvalidScheduleSequenceException",
+            content = arrayOf(Content())
+        )
+    )
+    /**
+     * 전형 일정을 생성합니다.
+     */
+    fun createSchedules(
+        @RequestBody @Valid
+        request: CreateScheduleRequest
     )
 }
