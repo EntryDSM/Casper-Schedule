@@ -89,7 +89,7 @@ interface ScheduleApiDocument {
     )
     @ApiResponses(
         ApiResponse(
-            responseCode = "200",
+            responseCode = "201",
             description = "전형 일정 생성 성공",
             content = arrayOf(Content())
         ),
