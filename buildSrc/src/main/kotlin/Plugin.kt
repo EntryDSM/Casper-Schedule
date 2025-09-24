@@ -9,4 +9,5 @@ object Plugin {
     const val CASPER_DOCUMENTATION = "casper.documentation-convention"
     const val PROTOBUF = "com.google.protobuf"
     const val OSDETECTOR = "com.google.osdetector"
+    const val JPA = "plugin.jpa"
 }
