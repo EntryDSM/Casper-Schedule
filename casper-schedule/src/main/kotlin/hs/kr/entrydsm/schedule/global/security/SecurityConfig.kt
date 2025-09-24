@@ -54,6 +54,7 @@ class SecurityConfig(
                 auth
                     .requestMatchers(CorsUtils::isCorsRequest).permitAll()
                     .requestMatchers(HttpMethod.PATCH, "/schedule/**").hasRole(UserRole.ADMIN.name)
+                    .requestMatchers(HttpMethod.POST, "/schedule/**").hasRole(UserRole.ADMIN.name)
                     .requestMatchers("/swagger-ui/**").permitAll()
                     .requestMatchers("/v3/api-docs/**").permitAll()
                     .requestMatchers("/swagger-resources/**").permitAll()
