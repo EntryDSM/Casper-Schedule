@@ -1,18 +1,23 @@
 package hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`
 
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.ScheduleDto
+import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request.CreateScheduleRequest
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request.UpdateSchedulesRequest
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response.SchedulesResponse
+import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.CreateScheduleUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.QueryScheduleByTypeUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.QuerySchedulesUseCase
 import hs.kr.entrydsm.schedule.domain.schedule.application.port.`in`.UpdateSchedulesUseCase
 import hs.kr.entrydsm.schedule.global.document.schedule.ScheduleApiDocument
 import jakarta.validation.Valid
+import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.PatchMapping
+import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RequestMapping
 import org.springframework.web.bind.annotation.RequestParam
+import org.springframework.web.bind.annotation.ResponseStatus
 import org.springframework.web.bind.annotation.RestController
 
 /**
@@ -28,7 +33,8 @@ import org.springframework.web.bind.annotation.RestController
 class ScheduleWebAdapter(
     private val queryScheduleByTypeUseCase: QueryScheduleByTypeUseCase,
     private val querySchedulesUseCase: QuerySchedulesUseCase,
-    private val updateSchedulesUseCase: UpdateSchedulesUseCase
+    private val updateSchedulesUseCase: UpdateSchedulesUseCase,
+    private val createScheduleUseCase: CreateScheduleUseCase
 ) : ScheduleApiDocument {
     @GetMapping(params = ["type"])
     override fun queryScheduleByType(
@@ -54,4 +60,11 @@ class ScheduleWebAdapter(
         @RequestBody @Valid
         request: UpdateSchedulesRequest
     ) = updateSchedulesUseCase.execute(request)
+
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    override fun createSchedules(
+        @RequestBody @Valid
+        request: CreateScheduleRequest
+    ) = createScheduleUseCase.execute(request)
 }

@@ -12,7 +12,7 @@ import java.time.LocalDateTime
  * @property date 스케줄 날짜 및 시간
  */
 data class Schedule(
-    val id: Int,
+    val id: Int? = null,
     val type: Type,
     val date: LocalDateTime
 ) {
