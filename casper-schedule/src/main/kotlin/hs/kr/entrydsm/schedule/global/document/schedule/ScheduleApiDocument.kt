@@ -21,7 +21,8 @@ interface ScheduleApiDocument {
 
     @Operation(
         summary = "일정 종류별 전형 일정 조회",
-        description = "일정 종류별 전형 일정을 조회합니다."
+        description = "일정 종류별 전형 일정을 조회합니다.",
+        operationId = "queryScheduleByType"
     )
     @ApiResponses(
         ApiResponse(
@@ -44,7 +45,8 @@ interface ScheduleApiDocument {
 
     @Operation(
         summary = "모든 전형 일정 조회",
-        description = "모든 전형 일정을 조회합니다."
+        description = "모든 전형 일정을 조회합니다.",
+        operationId = "querySchedules"
     )
     @ApiResponse(
         responseCode = "200",
