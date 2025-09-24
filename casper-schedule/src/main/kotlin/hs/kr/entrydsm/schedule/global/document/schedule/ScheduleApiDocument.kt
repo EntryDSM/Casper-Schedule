@@ -5,6 +5,7 @@ import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.request.UpdateSc
 import hs.kr.entrydsm.schedule.domain.schedule.adapter.`in`.dto.response.SchedulesResponse
 import io.swagger.v3.oas.annotations.Operation
 import io.swagger.v3.oas.annotations.media.Content
+import io.swagger.v3.oas.annotations.media.Schema
 import io.swagger.v3.oas.annotations.responses.ApiResponse
 import io.swagger.v3.oas.annotations.responses.ApiResponses
 import io.swagger.v3.oas.annotations.tags.Tag
@@ -26,7 +27,7 @@ interface ScheduleApiDocument {
         ApiResponse(
             responseCode = "200",
             description = "일정 종류별 전형 일정 조회 성공",
-            content = arrayOf(Content())
+            content = [Content(schema = Schema(implementation = ScheduleDto::class))]
         ),
         ApiResponse(
             responseCode = "404",
@@ -45,12 +46,10 @@ interface ScheduleApiDocument {
         summary = "모든 전형 일정 조회",
         description = "모든 전형 일정을 조회합니다."
     )
-    @ApiResponses(
-        ApiResponse(
-            responseCode = "200",
-            description = "모든 전형 일정 조회 성공",
-            content = arrayOf(Content())
-        )
+    @ApiResponse(
+        responseCode = "200",
+        description = "모든 전형 일정 조회 성공",
+        content = [Content(schema = Schema(implementation = SchedulesResponse::class))]
     )
     /**
      * 모든 전형 일정을 조회합니다.
