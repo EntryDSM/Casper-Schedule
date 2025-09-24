@@ -59,13 +59,13 @@ interface ScheduleApiDocument {
     fun querySchedules(): SchedulesResponse
 
     @Operation(
-        summary = "일전형 일정 수정",
+        summary = "전형 일정 수정",
         description = "전형 일정을 수정합니다."
     )
     @ApiResponses(
         ApiResponse(
             responseCode = "200",
-            description = "일전형 일정 수정 성공",
+            description = "전형 일정 수정 성공",
             content = arrayOf(Content())
         ),
         ApiResponse(
